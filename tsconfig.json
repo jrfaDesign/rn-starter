@@ -1,6 +1,23 @@
 {
   "extends": "expo/tsconfig.base",
+  "target": "ES2017",
+  "module": "commonjs",
+  "jsx": "react-native",
+  "allowJs": true,
+  "strict": true,
+  "moduleResolution": "node",
+  "esModuleInterop": true,
+  "skipLibCheck": true,
+  "allowSyntheticDefaultImports": true,
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["app/*"],
+      "@assets/*": ["assets/*"]
+    },
+    "module": "ESNext",
+    "allowJs": true
+  },
+  "include": ["app/**/*.ts", "app/**/*.tsx"]
 }
