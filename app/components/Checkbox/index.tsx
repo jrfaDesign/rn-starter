@@ -49,6 +49,7 @@ const Checkbox = ({ checked, setChecked }: Props) => {
     <Pressable onPress={() => setChecked(!checked)}>
       {({ pressed }) => (
         <Animated.View
+          testID="checkbox-container"
           style={[
             styles.container,
             animatedContainerStyle,

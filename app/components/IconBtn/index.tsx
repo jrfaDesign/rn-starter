@@ -25,7 +25,7 @@ const IconBtn = ({
   onPress
 }: IconProps) => {
   return (
-    <Pressable disabled={disabled} onPress={onPress}>
+    <Pressable disabled={disabled} onPress={onPress} testID={"icon-btn"}>
       {({ pressed }) => (
         <View style={[styles.container, iconBackgroundStyles, { opacity: pressed ? 0.5 : 1 }]}>
           <Icon size={size} from={from} name={name} color={color} />

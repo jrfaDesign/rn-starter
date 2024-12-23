@@ -37,6 +37,7 @@ const ThemeText = ({
 
   return (
     <Text
+      testID="themetext"
       onPress={onPress}
       numberOfLines={monospace ? 1 : numberOfLines || 0}
       style={[styles.text, style]}

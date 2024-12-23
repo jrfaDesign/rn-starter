@@ -30,7 +30,6 @@ const Home = () => {
           icon={{
             from: "MaterialCommunityIcons",
             name: "view-dashboard",
-            size: 30,
             color: "white"
           }}
         />

@@ -27,8 +27,14 @@ const ScreenHeader = ({
   const marginBottom = !title && !topLeftIcon && !topRightIcon && !centerComponent ? 20 : 14;
 
   return (
-    <SafeAreaView style={[{ minHeight, marginBottom }, styles.container, containerStyles]}>
-      <View style={[styles.topLeftIcons, { justifyContent: "flex-start", flex: topLeftIconsFlex }]}>
+    <SafeAreaView
+      testID="safearea-container"
+      style={[{ minHeight, marginBottom }, styles.container, containerStyles]}
+    >
+      <View
+        testID="topLeft-container"
+        style={[styles.topLeftIcons, { justifyContent: "flex-start", flex: topLeftIconsFlex }]}
+      >
         {topLeftIcon?.map((icon, idx) => (
           <View style={{}} key={idx}>
             {icon}
@@ -37,7 +43,7 @@ const ScreenHeader = ({
       </View>
 
       {title && (
-        <View style={styles.title}>
+        <View testID="text-container" style={styles.title}>
           <ThemeText monospace style={{ textAlign: "center" }} fontWeight={"700"} size={18}>
             {title}
           </ThemeText>
@@ -46,7 +52,10 @@ const ScreenHeader = ({
 
       {!title && centerComponent && <View style={[styles.title]}>{centerComponent}</View>}
 
-      <View style={[styles.topLeftIcons, { justifyContent: "flex-end", flex: topRightIconsFlex }]}>
+      <View
+        testID="topRight-container"
+        style={[styles.topLeftIcons, { justifyContent: "flex-end", flex: topRightIconsFlex }]}
+      >
         {topRightIcon?.map((icon, idx) => (
           <View key={idx}>{icon}</View>
         ))}

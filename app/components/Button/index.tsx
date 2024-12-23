@@ -89,10 +89,14 @@ const Button = ({
   );
 
   return (
-    <View style={[styles.buttonContainer, { width: `${buttonWidthPercentage}%` }]}>
-      <Pressable disabled={disabled || loading} onPress={onPress}>
+    <View
+      testID="button-wrapper"
+      style={[styles.buttonContainer, { width: `${buttonWidthPercentage}%` }]}
+    >
+      <Pressable testID="button-pressable" disabled={disabled || loading} onPress={onPress}>
         {({ pressed }) => (
           <View
+            testID="button-container"
             style={[
               {
                 opacity: pressed ? 0.5 : 1,
@@ -103,13 +107,20 @@ const Button = ({
               buttonContainerStyles
             ]}
           >
-            {!loading && !image && icon && <Icon {...icon} />}
+            {!loading && !image && icon && <Icon {...icon} size={icon.size ?? 20} />}
             {!loading && !icon && image && (
-              <Image source={image} style={[styles.image, imgStyles]} />
+              <Image testID="button-img" source={image} style={[styles.image, imgStyles]} />
             )}
-            {loading && <ActivityIndicator animating={true} size={20} color={primary} />}
+            {loading && (
+              <ActivityIndicator
+                testID="button-loading"
+                animating={true}
+                size={20}
+                color={primary}
+              />
+            )}
             {!loading && text && (
-              <ThemeText style={textStyle} color={textColor} fontWeight="600" size={16}>
+              <ThemeText color={textColor} fontWeight="600" size={18} style={textStyle}>
                 {text}
               </ThemeText>
             )}

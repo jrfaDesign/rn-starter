@@ -80,8 +80,9 @@ const Input = ({
   const { keyboardType, textContentType, secureTextEntry } = getKeyboardProps(type);
 
   return (
-    <View style={containerStyle}>
+    <View testID="input-container" style={containerStyle}>
       <Pressable
+        testID="input-presable"
         style={[
           styles.container,
           {
@@ -94,6 +95,7 @@ const Input = ({
         {icon && <Icon {...icon} />}
 
         <TextInput
+          testID="text-input"
           ref={inputRef}
           style={[
             styles.input,
@@ -116,7 +118,11 @@ const Input = ({
         />
 
         {type === "password" && (
-          <Pressable onPress={() => setHidePassword(!hidePassword)} style={styles.eyeIconContainer}>
+          <Pressable
+            testID="input-password-icon-pressable"
+            onPress={() => setHidePassword(!hidePassword)}
+            style={styles.eyeIconContainer}
+          >
             <Icon
               from="Feather"
               name={hidePassword ? "eye-off" : "eye"}
@@ -127,7 +133,7 @@ const Input = ({
         )}
       </Pressable>
       {errorMsg && (
-        <View style={{ left: 4, top: 4 }}>
+        <View testID="input-error-container" style={{ left: 4, top: 4 }}>
           <ThemeText fontWeight="500" color={error}>
             {errorMsg}
           </ThemeText>
