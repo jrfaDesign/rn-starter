@@ -7,11 +7,11 @@ import {
 import MainTabNav from "./tabs/MainTabNav";
 import SecondaryTabNav from "./tabs/SecondaryTabNav";
 
-import AuthGroupStack from "./stacks/AuthGroupStack";
+import AuthScreenStack from "./stacks/AuthScreenStack";
 
 import { TABS_PARAMS } from "@/types/Navigation/Tabs";
 import { STACK_PARAMS } from "@/types/Navigation/Stack";
-import useThemeColor from "@/hooks/useThemeColor";
+
 import useSharedStyles from "@/hooks/useSharedStyles";
 
 const Stack = createNativeStackNavigator<AllNavTypes>();
@@ -26,7 +26,7 @@ const RootStackNavigator = () => {
       <Stack.Screen name="SecondaryTab" component={SecondaryTabNav} />
 
       <Stack.Group screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="AuthStack" component={AuthGroupStack} />
+        <Stack.Screen name="AuthStack" component={AuthScreenStack} />
       </Stack.Group>
     </Stack.Navigator>
   );

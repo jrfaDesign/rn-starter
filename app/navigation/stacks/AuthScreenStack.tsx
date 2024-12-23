@@ -11,7 +11,7 @@ import useSharedStyles from "@/hooks/useSharedStyles";
 
 const Stack = createNativeStackNavigator<StackType<"AuthStack">>();
 
-const AuthGroupStack = () => {
+const AuthScreenStack = () => {
   const { DEFAULT_SCREEN_OPTIONS } = useSharedStyles();
 
   return (
@@ -23,6 +23,6 @@ const AuthGroupStack = () => {
   );
 };
 
-export default AuthGroupStack;
+export default AuthScreenStack;
 
 const styles = StyleSheet.create({});

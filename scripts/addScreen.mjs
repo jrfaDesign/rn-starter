@@ -104,14 +104,12 @@ describe("${screenName}", () => {
 
   const screensFileContent = fs.readFileSync(screensFilePath, "utf-8");
 
-  // Check if the screen is already present in SCREENS_PARAMS
   const screenExists = new RegExp(`\\b${screenName}\\b`).test(screensFileContent);
   if (screenExists) {
     console.log(`Screen "${screenName}" is already defined in the SCREENS_PARAMS.`);
     return;
   }
 
-  // Prepend the new screen at the beginning of SCREENS_PARAMS
   const newScreenParam = `  ${screenName}?: undefined;`;
 
   const updatedScreensFileContent = screensFileContent.replace(
@@ -121,7 +119,6 @@ describe("${screenName}", () => {
     }
   );
 
-  // Write the updated content back to `Screens.ts`
   fs.writeFileSync(screensFilePath, updatedScreensFileContent);
   console.log(`Added "${screenName}" to SCREENS_PARAMS in Screens.ts.`);
 }
