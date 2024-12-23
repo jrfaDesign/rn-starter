@@ -9,7 +9,9 @@
     "web": "expo start --web",
     "test": "jest",
     "test:coverage": "jest --coverage && open coverage/lcov-report/index.html",
-    "test:coverage:report": " open coverage/lcov-report/index.html"
+    "test:coverage:report": " open coverage/lcov-report/index.html",
+    "add:component": "node scripts/addComponent.mjs",
+    "add:screen": "node scripts/addScreen.mjs"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.4",
@@ -20,6 +22,7 @@
     "@react-navigation/native-stack": "^7.2.0",
     "expo": "~52.0.18",
     "expo-status-bar": "~2.0.0",
+    "inquirer": "^12.3.0",
     "jest-expo": "^52.0.2",
     "react": "18.3.1",
     "react-native": "0.76.5",
@@ -40,7 +43,6 @@
     "@testing-library/react-native": "^12.9.0",
     "@types/jest": "^29.5.14",
     "@types/react": "~18.3.12",
-    "babel-jest": "^29.7.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "babel-preset-expo": "^12.0.4",
     "jest": "^29.7.0",

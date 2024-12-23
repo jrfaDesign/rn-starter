@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
-import Button from "."; // Adjust the import path to where your Button component is located
-import { ActivityIndicator } from "react-native";
+import Button from ".";
 
 describe("Button Component", () => {
   it("renders correctly with text", () => {
